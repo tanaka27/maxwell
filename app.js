@@ -112,23 +112,23 @@ mode[3].addEventListener("touchend",event=>{
   bNumber=4;heighE=2;
   level.textContent="EASY";
   select.remove();
-}
+});
 
 mode[2].addEventListener("touchend",event=>{
   bNumber=8;heighE=4;
   level.textContent="NORMAL";
   select.remove();
-}
+});
 mode[1].addEventListener("touchend",event=>{
   bNumber=12;heighE=6;
   level.textContent="HARD";
   select.remove();
-}
+});
 mode[0].addEventListener("touchend",event=>{
   bNumber=16;heighE=8;
   level.textContent="VERY HARD";
   select.remove();
-}
+});
 
 function setBalls(){
 for(var i=0;i<bNumber;i++){
