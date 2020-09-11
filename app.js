@@ -31,35 +31,42 @@ lastScreen.style.zIndex="3";
 lastScreen.style.width="960px";
 lastScreen.style.height="640px";
 lastScreen.style.backgroundColor="#ffff99";
+
 lastContent.id="lastC";
 lastContent.style.position="relative";
 lastContent.style.textAlign="center";
 lastContent.style.top="200px";
+
 lastMessage.style.position="absolute";
 lastMessage.style.left="350px";
 lastMessage.textContent="GAME CLEAR!!";
+
 lastDemon.src="demon-human.png";
 lastDemon.style.position="relative";
 lastDemon.style.width="100px";
 lastDemon.style.height="120px";
 lastDemon.style.right="115px";
 lastDemon.style.top="160px";
+
 lasttalk.src="comment.png";
 lasttalk.style.position="absolute";
 lasttalk.style.width="600px";
 lasttalk.style.height="270px";
 lasttalk.style.right="150px";
 lasttalk.style.top="10px";
+
 lastDemonMes.style.position="absolute";
 lastDemonMes.style.right="180px";
 lastDemonMes.style.height="320px";
 lastDemonMes.style.fontSize="25px";
 lastDemonMes.style.width="540px";
+
 lastScore.style.position="absolute";
 lastScore.style.top="50px";
 lastScore.style.left="430px";
 lastScore.style.fontSize="20px";
 lastScore.style.fontWeight="bold";
+
 result.style.position="absolute";
 result.style.top="70px";
 result.style.left="240px";
@@ -73,8 +80,6 @@ var demontouch=false;
 var r=10;
 var timing=0;
 var time=0;
-//var x=110+r+Math.random()*(325-2*r);
-//var y=160+r+Math.random()*(380-2*r);
 var bNumber=10;
 var heighE=5;
 var sx=435;
@@ -88,6 +93,7 @@ var coldL=0;
 var clear=false;
 var jadgeFirst=true;
 var loopout=false;
+
 mode[3].onmouseup=function(event){
   bNumber=4;heighE=2;
   level.textContent="EASY";
@@ -141,8 +147,10 @@ by[i]=160+r+Math.random()*(380-2*r);
 }
 jadgeFirst=false;
 }
+
 var xSpeed=[];
 var ySpeed=[];
+
 function setSpeed(){
 for(var i=0;i<bNumber;i++){
 if(Math.random()>0.5){
@@ -165,17 +173,21 @@ if(Math.random()>0.5){
 }
 }
 }
+
 function drawMessage(){
   ctx.font="20px Arial";
   ctx.fillStyle="red";
   ctx.fillText("TOUCH!→",300,120);
 }
+
 var img=new Image();
 img.src="demon.png";
+
 function ball(bs){
   drawBall(bs);
   ballCollision(bs);
 }
+
 function drawBall(bNum){
   ctx.beginPath();
   ctx.arc(bx[bNum],by[bNum],r,0,Math.PI*2,false);
@@ -185,8 +197,9 @@ function drawBall(bNum){
 
   ctx.fill();
   ctx.closePath();
+}
 
-}function demonController(){
+function demonController(){
   if(demontouch&&sy+400>=160){
     sy-=10;
   }
@@ -195,6 +208,24 @@ function drawBall(bNum){
   }
 }
 
+function drawSample(){
+  ctx.beginPath();
+  ctx.arc(850,250,r,0,Math.PI*2,false);
+  ctx.fillStyle="#ff0000";
+  ctx.fill();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.arc(850,300,r,0,Math.PI*2,false);
+  ctx.fillStyle="#0000ff";
+  ctx.fill();
+  ctx.closePath();
+  ctx.font="15px Arial";
+  ctx.fillStyle="black";
+  ctx.fillText("High Speed",870,255);
+  ctx.font="15px Arial";
+  ctx.fillStyle="black";
+  ctx.fillText("Low Speed",870,305);
+}
 
 function difference(){
   heatL=heatR=coldL=coldR=0;
@@ -385,6 +416,7 @@ function loop(){
     setSpeed();
   }
   drawBox();
+  drawSample();
   difference();
   drawRoomR();
   drawRoomL();
@@ -429,7 +461,6 @@ if(loopout){
   result.textContent="あなたは立派な悪魔です";
 }
 }
-
 var loopController;
 function startTimer(){
 loopController=setInterval(function(){
@@ -444,5 +475,4 @@ clearInterval(loopController);
 start[0].onmouseup=function(event){
   starts[0].remove();
   startTimer();
-
 }
