@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>マクスウェルの悪魔になろう！！</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    canvas{
+      background-color:#add8e6;
+      margin-top:10px;
+      margin-left:10px;
+    }
+    .expl{
+      position: absolute;
+      left:270px;
+      top:250px;
+      height: 500px;
+      z-index: 1;
+    }
+    #start{
+      width:100px;
+      height:40px;
+      background-color:#60ffff;
+      border-radius: 10px;
+      position:relative;
+      left:90px;
+    }
+    #start:active{
+      background-color:#7abcff;
+    }
+    .stageSelect:active{
+      background-color: #ffadad;
+    }
+    button:focus {
+	   outline:0;
+    }
+    .select{
+      position: absolute;
+      left:10px;
+      top:10px;
+      background-color:#ffdbb7;
+      width:960px;
+      height:640px;
+      z-index: 2;
+      text-align: center;
+    }
+    .select p{
+      position: relative;
+      top:200px;
+      font-size: 30px;
+      font-weight: bold;
+      left:0px;
+      text-align: center;
+    }
+    .buttons{
+      width:600px;
+      height:100px;
+      background-color:#ffbf7f;
+      position:relative;
+      border-radius: 10px;
+      left:180px;
+      top:250px;
+    }
+    .stageSelect{
+      width:100px;
+      height:40px;
+      background-color:#ff7f7f;
+      border-radius: 5px;
+      position:relative;
+      left:auto;
+      top: 30px;
+      margin-right:10px;
+
+    }
+    .demon{
+      position: relative;
+      top:200px;
+    }
+    #level{
+  text-align: center;
+    }
+    .expl h1{
+      text-align: center;
+      margin-right:120px;
+
+    }
+    .expl p{
+      width: 100px;
+      margin-left: 170px;
+      background-color: #ffa8a8;
+      font-weight: bold;
+    }
+    #start{
+      position: relative;
+      left:170px;
+      margin-top: 100px
+    }
+
+  </style>
+
+</head>
+
+<body>
+<canvas id="myCanvas" width="960" height="640"></canvas>
+<div class="expl">
+  <h1>仕切り板を動かして温度差をつくりだそう！！</h1>
+  <p id=level>mode</p>
+  <button type="button" id="start" class="ex">START</button>
+</div>
+<div class="select" id="stages">
+  <p>マクスウェルの悪魔になって熱力学第二法則を破ろう！！</p>
+  <img src="demon-human.png" width="100" height="120" class="demon">
+  <div class="buttons">
+    <button type="button" class="stageSelect" id="veryhard">VERY HARD</button>
+    <button type="button" class="stageSelect" id="hard">HARD</button>
+    <button type="button" class="stageSelect" id="normal">NORMAL</button>
+    <button type="button" class="stageSelect" id="easy">EASY</button>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+
+</html>
